@@ -8,7 +8,10 @@
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-infinite": "^0.10.0",
     "react-router": "^2.8.1",
+    "react-scrollbar": "^0.4.2",
+    "react-sidebar": "^2.2.1",
     "superagent": "^2.3.0",
     "superagent-jsonp": "^0.1.1"
   },

@@ -35,6 +35,23 @@ class PetFilter extends Component {
     });
   }
 
+  animalChecklist() {
+    return this.animalTypes.map((animalType) => {
+      return (
+        <p className="control"  key={ animalType }>
+          <label className="checkbox">
+            <input
+              type="checkbox"
+              onChange={ this.onAnimalSelection }
+              value={ animalType }
+              />
+            { animalType }
+          </label>
+        </p>
+      )
+    });
+  }
+
   search() {
     this.props.search(this.state.locationFilter, this.state.animalFilter.length > 0 ? this.state.animalFilter : this.animalTypes);
   }

@@ -14,7 +14,7 @@ class PetImage extends Component {
     let imageNode = this.refs['image'];
     let imageSizeRatio = imageNode.width / imageNode.height;
 
-    this.setState({ imageClasses: imageSizeRatio < 1.25 ? 'portrait' : 'landscape' });
+    this.setState({ imageClasses: imageSizeRatio < 1 ? 'portrait' : 'landscape' });
   }
 
   render() {

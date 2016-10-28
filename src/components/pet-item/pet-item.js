@@ -25,7 +25,11 @@ class PetItem extends Component {
   render() {
     return (
       <div className="card is-fullwidth pet-card">
-        <PetImage imageUrl={ this.state.petImageUrl } />
+        <div className="card-image">
+          <figure className="image is-4by3">
+            <img src={ this.state.petImageUrl } alt="" />
+          </figure>
+        </div>
         <div className="card-content">
           <div className="media">
             <div className="media-content">
@@ -40,3 +44,6 @@ class PetItem extends Component {
 }
 
 export default PetItem;
+
+
+//      <PetImage imageUrl={ this.state.petImageUrl } />

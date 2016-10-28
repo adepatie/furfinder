@@ -24,20 +24,6 @@ class PetsHero extends PetFilter {
   }
 
   render() {
-    let animalChecklist = this.animalTypes.map((animalType) => {
-      return (
-        <p className="control"  key={ animalType }>
-          <label className="checkbox">
-            <input
-              type="checkbox"
-              onChange={ this.onAnimalSelection }
-              value={ animalType }
-              />
-            { animalType }
-          </label>
-        </p>
-      )
-    });
 
     return (
       <div className="hero">
@@ -54,7 +40,7 @@ class PetsHero extends PetFilter {
                 required />
             </p>
             <h4 className="subtitle">Select some species (If none are selected then all will be displayed)</h4>
-            {animalChecklist}
+            {this.animalChecklist()}
             <button type="submit" onClick={this.search} ref="submitButton">Find me a friend!</button>
           </div>
         </div>

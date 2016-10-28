@@ -1,0 +1,15 @@
+.pets-route {
+  height: 100%;
+}
+.pets-list {
+  height: calc(100% - 50px);
+}
+
+.load-button {
+  margin: 30px auto;
+}
+
+.load-button > button {
+  margin:auto;
+  display: block;
+}
