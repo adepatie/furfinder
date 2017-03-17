@@ -23,8 +23,9 @@ class PetItem extends Component {
   }
 
   render() {
+    const { onClick } = this.props;
     return (
-      <div className="card is-fullwidth pet-card">
+      <div className="card is-fullwidth pet-card" onClick={onClick}>
         <div className="card-image">
           <figure className="image is-4by3">
             <img src={ this.state.petImageUrl } alt="" />

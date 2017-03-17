@@ -1,10 +1,12 @@
 import React, { createClass } from 'react';
+import { browserHistory } from 'react-router';
 import { render } from 'react-dom';
+import { connect } from 'react-redux';
 import request from 'superagent';
 import jsonp from 'superagent-jsonp';
+import { selectPet } from '../../index/actions';
 import Sidebar from 'react-sidebar';
 import ScrollArea from 'react-scrollbar';
-
 import PetItem from '../../components/pet-item/pet-item.js';
 import PetsHero from '../../components/pets-hero/pets-hero.js';
 import PetsNav from '../../components/pets-nav/pets-nav.js';
@@ -29,12 +31,16 @@ let Pets = createClass({
   },
 
   buildPetList() {
+    const { dispatch } = this.props;
     let petList = null;
     if(this.state.petsArray.length) {
       petList = this.state.petsArray.map((pet, ind) => {
         return (
           <div className="column is-4-desktop is-6-tablet is-3-widescreen" key={ind}>
-            <PetItem pet={pet} />
+            <PetItem pet={pet} onClick={() => {
+                dispatch(selectPet(pet));
+                browserHistory.push('/pet/' + pet.id.$t);
+              }}/>
           </div>
         )
       });
@@ -160,4 +166,4 @@ let Pets = createClass({
   }
 })
 
-module.exports = Pets;
+module.exports = connect()(Pets);
